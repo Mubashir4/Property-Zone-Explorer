@@ -40,3 +40,4 @@ export const { addToShortlist, removeFromShortlist, toggleShortlist, clearShortl
   shortlistSlice.actions;
 export default shortlistSlice.reducer;
 
+
