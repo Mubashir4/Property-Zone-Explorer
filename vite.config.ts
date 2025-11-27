@@ -102,44 +102,6 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     sourcemap: true,
-    rollupOptions: {
-      output: {
-        manualChunks: (id) => {
-          if (id.includes('node_modules')) {
-            // Leaflet packages (no React dependency)
-            if (id.includes('leaflet')) {
-              return 'leaflet-vendor';
-            }
-            // Turf packages (no React dependency)
-            if (id.includes('@turf')) {
-              return 'turf-vendor';
-            }
-            // Core React packages - MUST be first
-            if (
-              id.includes('react/') ||
-              id.includes('react-dom/') ||
-              id.includes('scheduler') ||
-              id.includes('use-sync-external-store')
-            ) {
-              return 'react-vendor';
-            }
-            // ALL packages that depend on React
-            if (
-              id.includes('react-') ||
-              id.includes('@emotion') ||
-              id.includes('@mui') ||
-              id.includes('framer-motion') ||
-              id.includes('@tanstack/react-query') ||
-              id.includes('@reduxjs')
-            ) {
-              return 'react-ecosystem';
-            }
-            // Other vendor chunks (should not have React dependencies)
-            return 'vendor';
-          }
-        },
-      },
-    },
     chunkSizeWarningLimit: 1000,
   },
 });
