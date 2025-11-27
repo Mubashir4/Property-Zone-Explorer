@@ -1,0 +1,38 @@
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background - white for light mode -->
+  <rect width="128" height="128" rx="24" fill="white"/>
+  
+  <!-- Border with gradient -->
+  <rect x="4" y="4" width="120" height="120" rx="20" fill="none" stroke="url(#gradient)" stroke-width="2"/>
+  
+  <!-- Gradient definition -->
+  <defs>
+    <linearGradient id="gradient" x1="0" y1="0" x2="128" y2="128" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#2563eb"/>
+      <stop offset="50%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#60a5fa"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Map pin marker with gradient -->
+  <g transform="translate(64, 40)">
+    <!-- Pin shape -->
+    <path d="M 0,-24 C -13.2,-24 -24,-13.2 -24,0 C -24,8 0,28 0,28 C 0,28 24,8 24,0 C 24,-13.2 13.2,-24 0,-24 Z" 
+          fill="url(#gradient)"/>
+    <!-- Inner circle -->
+    <circle cx="0" cy="0" r="8" fill="white"/>
+  </g>
+  
+  <!-- Map fold lines -->
+  <g opacity="0.4">
+    <line x1="20" y1="85" x2="50" y2="85" stroke="#2563eb" stroke-width="3" stroke-linecap="round"/>
+    <line x1="60" y1="85" x2="108" y2="85" stroke="#3b82f6" stroke-width="3" stroke-linecap="round"/>
+    <line x1="20" y1="95" x2="40" y2="95" stroke="#3b82f6" stroke-width="3" stroke-linecap="round"/>
+    <line x1="50" y1="95" x2="108" y2="95" stroke="#60a5fa" stroke-width="3" stroke-linecap="round"/>
+    <line x1="20" y1="105" x2="75" y2="105" stroke="#60a5fa" stroke-width="3" stroke-linecap="round"/>
+    <line x1="85" y1="105" x2="108" y2="105" stroke="#2563eb" stroke-width="3" stroke-linecap="round"/>
+  </g>
+</svg>
+
+
+

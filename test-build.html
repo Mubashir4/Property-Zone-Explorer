@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Build - No Service Worker</title>
+</head>
+<body>
+    <h1>Testing Production Build</h1>
+    <p>This page loads the app without service worker interference.</p>
+    <script>
+        // Unregister any existing service workers
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.getRegistrations().then(function(registrations) {
+                for(let registration of registrations) {
+                    registration.unregister();
+                }
+            });
+        }
+        // Redirect to main app
+        window.location.href = '/';
+    </script>
+</body>
+</html>
+

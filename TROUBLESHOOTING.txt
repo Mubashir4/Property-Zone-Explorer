@@ -1,0 +1,88 @@
+═══════════════════════════════════════════════════════════════════
+BANNER17 - TROUBLESHOOTING GUIDE
+═══════════════════════════════════════════════════════════════════
+
+PROBLEM: "Failed to load properties. Please try again."
+═══════════════════════════════════════════════════════════════════
+
+CAUSE: Missing .env.local file or mock data not enabled
+
+FIX (Option 1 - Automatic):
+────────────────────────────
+./dev.sh              (Mac/Linux)
+dev.bat               (Windows)
+
+This automatically:
+✓ Creates .env.local
+✓ Enables mock data
+✓ Clears ports
+✓ Starts server
+
+FIX (Option 2 - Manual):
+─────────────────────────
+Step 1: Create .env.local file in banner17/ folder
+
+VITE_USE_MOCK_DATA=true
+VITE_ENABLE_SCHOOLS=true
+VITE_ENABLE_AMENITIES=true
+VITE_ENABLE_RISK_OVERLAYS=true
+VITE_ENABLE_DRAWING_TOOLS=true
+
+Step 2: Kill running servers
+$ pkill -9 -f vite
+
+Step 3: Restart
+$ npm run dev
+
+Step 4: Hard refresh browser
+Mac: Cmd + Shift + R
+Windows: Ctrl + Shift + R
+
+═══════════════════════════════════════════════════════════════════
+
+✅ EXPECTED RESULT:
+───────────────────
+You should see:
+• 5 property cards in right panel
+• 5 property markers on Sydney map
+• 4 tabs: Filters / Schools / Amenities / Risk
+• No "Failed to load" error
+
+═══════════════════════════════════════════════════════════════════
+| PROBLEM: "useSyncExternalStore is not a function" error
+═══════════════════════════════════════════════════════════════════
+
+CAUSE: Service worker auto-registration interfering with React loading
+
+FIX: The PWA plugin is now configured to register manually after React loads.
+     If you still see this error, try these steps:
+
+1. Hard refresh: Cmd+Shift+R (Mac) or Ctrl+Shift+R (Windows)
+2. Clear service worker: DevTools → Application → Service Workers → Unregister
+3. Clear storage: DevTools → Application → Storage → Clear all
+
+═══════════════════════════════════════════════════════════════════
+
+STILL NOT WORKING?
+══════════════════
+
+1. Check server started:
+   Look for: "Local: http://localhost:XXXX/"
+
+2. Open correct URL:
+   Use the exact URL from terminal output
+
+3. Check browser console (F12):
+   Look for red errors
+   Common issues:
+   - Network errors → Check .env.local exists
+   - Import errors → Run: npm install
+   - Module errors → Delete node_modules, reinstall
+
+4. Nuclear option (fresh start):
+   $ rm -rf node_modules .env.local package-lock.json
+   $ npm install
+   $ ./dev.sh
+
+═══════════════════════════════════════════════════════════════════
+

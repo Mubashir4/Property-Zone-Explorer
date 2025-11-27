@@ -1,0 +1,197 @@
+BANNER17 PROJECT STRUCTURE
+==========================
+
+banner17/
+│
+├── Configuration Files (Root Level)
+│   ├── package.json              → Dependencies and scripts
+│   ├── tsconfig.json             → TypeScript configuration (strict mode)
+│   ├── tsconfig.node.json        → Node TypeScript config
+│   ├── vite.config.ts            → Vite build configuration + PWA
+│   ├── vitest.config.ts          → Test configuration
+│   ├── playwright.config.ts      → E2E test configuration
+│   ├── .eslintrc.json           → ESLint rules
+│   ├── .prettierrc              → Code formatting rules
+│   ├── .gitignore               → Git ignore patterns
+│   ├── .env.example             → Environment template
+│   ├── .env.development         → Dev environment
+│   ├── .env.production          → Production environment
+│   ├── index.html               → HTML entry point
+│   └── README.md                → Main documentation
+│
+├── .github/
+│   └── workflows/
+│       └── ci.yml               → GitHub Actions CI/CD pipeline
+│
+├── public/                       → Static assets
+│   ├── robots.txt               → SEO configuration
+│   └── vite.svg                 → Vite logo
+│
+├── tests/
+│   └── e2e/
+│       └── example.spec.ts      → Sample E2E test
+│
+└── src/                          → Source code
+    │
+    ├── api/                      → API Integration Layer
+    │   ├── config/
+    │   │   ├── apiEndpoints.ts      [SINGLE SOURCE OF TRUTH for all API URLs]
+    │   │   └── apiClient.ts         [Axios wrapper with interceptors]
+    │   │
+    │   ├── services/                [Service layer for API calls]
+    │   │   ├── propertyService.ts   → Property CRUD operations
+    │   │   ├── schoolService.ts     → School data operations
+    │   │   ├── amenityService.ts    → Amenity search operations
+    │   │   ├── riskService.ts       → Risk overlay data
+    │   │   ├── spatialService.ts    → Geocoding & distance
+    │   │   └── mockPropertyService.ts → Mock data for development
+    │   │
+    │   └── hooks/                   [React Query hooks for data fetching]
+    │       ├── useProperties.ts     → Property queries & mutations
+    │       ├── useSchools.ts        → School queries
+    │       ├── useAmenities.ts      → Amenity queries
+    │       └── useRiskData.ts       → Risk data queries
+    │
+    ├── components/               → Reusable UI Components
+    │   ├── common/                  [Shared components]
+    │   │   ├── Loading/
+    │   │   ├── ErrorBoundary/
+    │   │   ├── PropertyCard/        → Property display card
+    │   │   ├── PropertyCardSkeleton/
+    │   │   └── index.ts             [Barrel exports]
+    │   │
+    │   ├── layout/
+    │   │   └── BaseLayout.tsx       → Base page layout
+    │   │
+    │   ├── map/                     [Leaflet map components]
+    │   │   ├── BaseMap/             → Base Leaflet map setup
+    │   │   ├── PropertyMarkers/     → Clustered property markers
+    │   │   ├── PropertyMap/         → Main property map
+    │   │   └── index.ts
+    │   │
+    │   ├── property/                [Property-specific components]
+    │   │   ├── PropertyList/        → List view of properties
+    │   │   ├── PropertyFilters/     → Search filter controls
+    │   │   ├── PropertyDetail/      → Detailed property view
+    │   │   └── index.ts
+    │   │
+    │   ├── school/                  [School components]
+    │   │   └── SchoolMarker/        → School map markers
+    │   │
+    │   ├── amenity/                 [Amenity components]
+    │   │   └── AmenityMarker/       → Amenity map markers
+    │   │
+    │   └── risk/                    [Risk overlay components]
+    │       ├── RiskOverlay/         → GeoJSON risk layers
+    │       └── RiskLegend/          → Layer control panel
+    │
+    ├── features/                 → Feature Modules (Pages)
+    │   ├── search/
+    │   │   ├── SearchPage.tsx       [MAIN PAGE - Map + List + Filters]
+    │   │   └── SearchHeader.tsx     → App bar with controls
+    │   │
+    │   └── propertyDetail/
+    │       └── PropertyDetailPage.tsx → Property detail page
+    │
+    ├── store/                    → Redux State Management
+    │   ├── slices/
+    │   │   ├── searchSlice.ts       → Search filters & selection
+    │   │   ├── mapSlice.ts          → Map viewport & drawings
+    │   │   ├── schoolsSlice.ts      → School filters & selection
+    │   │   ├── amenitiesSlice.ts    → Amenity filters
+    │   │   ├── riskSlice.ts         → Risk layer visibility
+    │   │   └── themeSlice.ts        → Dark/light mode
+    │   │
+    │   ├── rootReducer.ts           → Combine all slices
+    │   ├── hooks.ts                 → Typed useDispatch/useSelector
+    │   └── index.ts                 → Store configuration
+    │
+    ├── types/                    → TypeScript Definitions
+    │   ├── property.types.ts        → Property & search types
+    │   ├── school.types.ts          → School & catchment types
+    │   ├── amenity.types.ts         → Amenity & category types
+    │   ├── risk.types.ts            → Risk layer types
+    │   ├── spatial.types.ts         → Geospatial types
+    │   └── index.ts                 [Barrel exports]
+    │
+    ├── hooks/                    → Custom React Hooks
+    │   ├── useDebounce.ts           → Debounce values (search)
+    │   ├── useColorMode.ts          → Theme mode management
+    │   └── useGeolocation.ts        → User location detection
+    │
+    ├── utils/                    → Utility Functions
+    │   ├── formatters.ts            → Price, date, distance formatters
+    │   ├── spatial.ts               → Turf.js spatial calculations
+    │   └── constants.ts             → App-wide constants
+    │
+    ├── theme/                    → Material-UI Theme
+    │   ├── palettes.ts              → Light & dark color schemes
+    │   └── index.ts                 → Theme factory function
+    │
+    ├── data/                     → Mock Data
+    │   └── mockProperties.ts        → 5 sample Sydney properties
+    │
+    ├── routes/
+    │   └── index.tsx                → Route definitions with lazy loading
+    │
+    ├── tests/                    → Test Setup
+    │   ├── setup.ts                 → Vitest setup
+    │   └── utils/
+    │       └── test-utils.tsx       → Testing library utilities
+    │
+    ├── App.tsx                   [ROOT COMPONENT]
+    ├── main.tsx                  [ENTRY POINT]
+    ├── index.css                 → Global styles
+    └── vite-env.d.ts            → Vite environment types
+
+
+KEY ARCHITECTURAL DECISIONS
+===========================
+
+1. API Layer Abstraction
+   → All API calls go through service layer
+   → Easy to switch between mock/real data
+   → Centralized error handling
+
+2. State Management Strategy
+   → Redux Toolkit: UI state (filters, selections)
+   → TanStack Query: Server state (API data, caching)
+   → Clear separation of concerns
+
+3. Component Organization
+   → Feature-based structure (search, propertyDetail)
+   → Reusable components in components/
+   → Each component in its own folder
+
+4. Type Safety
+   → TypeScript strict mode
+   → All props, state, and API responses typed
+   → Zero 'any' types
+
+5. Performance
+   → Code splitting by route (React.lazy)
+   → Marker clustering for 500+ properties
+   → Debounced search inputs
+   → React.memo for expensive components
+
+6. Developer Experience
+   → Hot Module Replacement (Vite)
+   → Redux DevTools integration
+   → React Query DevTools
+   → ESLint + Prettier automation
+
+
+FILE COUNT SUMMARY
+==================
+
+Configuration:        13 files
+Source Code:          58 files
+Tests:                3 files
+Documentation:        2 files
+Total:                76 files
+
+Lines of Code:        ~3,500 (excluding dependencies)
+
+
+
+

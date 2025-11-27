@@ -1,0 +1,223 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Leaflet marker fix */
+.leaflet-container {
+  font-family: inherit;
+  height: 100% !important;
+  width: 100% !important;
+}
+
+.custom-marker,
+.school-marker,
+.amenity-marker {
+  background: transparent;
+  border: none;
+}
+
+/* Smooth transitions */
+* {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+/* Style Leaflet Draw Controls - Position Bottom Right */
+.leaflet-draw {
+  margin: 0 !important;
+}
+
+.leaflet-bottom.leaflet-right {
+  bottom: 20px !important;
+  right: 20px !important;
+}
+
+.leaflet-draw-toolbar {
+  background: white !important;
+  border-radius: 8px !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  padding: 4px !important;
+}
+
+.leaflet-draw-toolbar a {
+  background-color: transparent !important;
+  border: none !important;
+  width: 36px !important;
+  height: 36px !important;
+  border-radius: 4px !important;
+  transition: all 0.2s ease !important;
+}
+
+.leaflet-draw-toolbar a:hover {
+  background-color: #2563eb !important;
+}
+
+.leaflet-draw-toolbar a:hover::before {
+  filter: brightness(0) invert(1) !important;
+}
+
+/* Hide all default Leaflet Draw controls - we use custom toolbar */
+.leaflet-draw,
+.leaflet-draw-toolbar,
+.leaflet-draw-section,
+.leaflet-draw-actions,
+.leaflet-draw-draw-polygon,
+.leaflet-draw-draw-circle,
+.leaflet-draw-draw-rectangle,
+.leaflet-draw-edit-edit,
+.leaflet-draw-edit-remove,
+.leaflet-draw-draw-polyline,
+.leaflet-draw-draw-marker,
+.leaflet-draw-draw-circlemarker {
+  display: none !important;
+}
+
+/* Active state */
+.leaflet-draw-toolbar a.leaflet-draw-toolbar-button-enabled {
+  background-color: #2563eb !important;
+}
+
+/* Dark mode support */
+[data-theme='dark'] .leaflet-draw-toolbar {
+  background: #1e293b !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+[data-theme='dark'] .leaflet-draw-toolbar a:hover {
+  background-color: #3b82f6 !important;
+}
+
+/* Enhanced edit mode styles - Industry standard (PowerPoint/MS Word like) */
+.leaflet-editing-icon {
+  width: 12px !important;
+  height: 12px !important;
+  margin-left: -6px !important;
+  margin-top: -6px !important;
+  border-radius: 50% !important;
+  background: white !important;
+  border: 2px solid #f97316 !important;
+  cursor: move !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+  transition: all 0.2s ease !important;
+}
+
+.leaflet-editing-icon:hover {
+  width: 16px !important;
+  height: 16px !important;
+  margin-left: -8px !important;
+  margin-top: -8px !important;
+  border-width: 3px !important;
+  background: #fff5f0 !important;
+  box-shadow: 0 3px 6px rgba(249, 115, 22, 0.4) !important;
+}
+
+/* Resize handles for rectangles and circles */
+.leaflet-marker-icon.leaflet-editing-icon {
+  cursor: grab !important;
+}
+
+.leaflet-marker-icon.leaflet-editing-icon:active {
+  cursor: grabbing !important;
+}
+
+/* Middle markers for adding vertices */
+.leaflet-marker-icon.leaflet-div-icon.leaflet-editing-icon.leaflet-touch-icon {
+  background: #f97316 !important;
+  border-color: white !important;
+  opacity: 0.8 !important;
+}
+
+.leaflet-marker-icon.leaflet-div-icon.leaflet-editing-icon.leaflet-touch-icon:hover {
+  opacity: 1 !important;
+  transform: scale(1.2) !important;
+}
+
+/* Draggable shapes - show move cursor */
+.leaflet-interactive[class*='leaflet-interactive']:hover {
+  cursor: move !important;
+  stroke-opacity: 0.8 !important;
+  fill-opacity: 0.4 !important;
+}
+
+/* Selected shape in edit mode */
+.leaflet-interactive.leaflet-edit-marker-selected {
+  stroke: #f97316 !important;
+  stroke-width: 4px !important;
+  stroke-dasharray: 10, 5 !important;
+  fill: #f97316 !important;
+  fill-opacity: 0.3 !important;
+  cursor: move !important;
+}
+
+/* Tooltip styling for measurements */
+.leaflet-draw-tooltip {
+  background: rgba(0, 0, 0, 0.8) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 4px !important;
+  color: white !important;
+  font-size: 12px !important;
+  padding: 4px 8px !important;
+  white-space: nowrap !important;
+}
+
+.leaflet-draw-tooltip-single {
+  margin-top: -12px !important;
+}
+
+/* Actions toolbar (Save/Cancel) during edit */
+.leaflet-draw-actions {
+  background: white !important;
+  border-radius: 4px !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  padding: 4px !important;
+  margin: 8px !important;
+}
+
+.leaflet-draw-actions a {
+  background: transparent !important;
+  border: none !important;
+  color: #2563eb !important;
+  font-weight: 600 !important;
+  padding: 6px 12px !important;
+  border-radius: 4px !important;
+  text-decoration: none !important;
+  transition: all 0.2s ease !important;
+}
+
+.leaflet-draw-actions a:hover {
+  background: #2563eb !important;
+  color: white !important;
+}
+
+.leaflet-draw-actions a:first-child {
+  background: #10b981 !important;
+  color: white !important;
+}
+
+.leaflet-draw-actions a:first-child:hover {
+  background: #059669 !important;
+}
+
+/* Better visual feedback during drawing */
+.leaflet-interactive.leaflet-edit-resize {
+  cursor: nesw-resize !important;
+}

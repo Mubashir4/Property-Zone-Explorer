@@ -1,0 +1,279 @@
+{
+  "properties": [
+    {
+      "id": "prop-001",
+      "address": "42 George Street",
+      "suburb": "Sydney",
+      "price": 1250000,
+      "bedrooms": 2,
+      "bathrooms": 1,
+      "propertyType": "Apartment",
+      "latitude": -33.8651,
+      "longitude": 151.2099
+    },
+    {
+      "id": "prop-002",
+      "address": "15 Harbour View Drive",
+      "suburb": "The Rocks",
+      "price": 2100000,
+      "bedrooms": 3,
+      "bathrooms": 2,
+      "propertyType": "Apartment",
+      "latitude": -33.8587,
+      "longitude": 151.2093
+    },
+    {
+      "id": "prop-003",
+      "address": "88 Crown Street",
+      "suburb": "Surry Hills",
+      "price": 1450000,
+      "bedrooms": 3,
+      "bathrooms": 2,
+      "propertyType": "Terrace",
+      "latitude": -33.8833,
+      "longitude": 151.2119
+    },
+    {
+      "id": "prop-004",
+      "address": "201 Victoria Road",
+      "suburb": "Drummoyne",
+      "price": 1850000,
+      "bedrooms": 4,
+      "bathrooms": 2,
+      "propertyType": "House",
+      "latitude": -33.8521,
+      "longitude": 151.1544
+    },
+    {
+      "id": "prop-005",
+      "address": "33 Bronte Road",
+      "suburb": "Bondi Junction",
+      "price": 1650000,
+      "bedrooms": 3,
+      "bathrooms": 2,
+      "propertyType": "Apartment",
+      "latitude": -33.8912,
+      "longitude": 151.2505
+    },
+    {
+      "id": "prop-006",
+      "address": "7 Military Road",
+      "suburb": "Mosman",
+      "price": 3200000,
+      "bedrooms": 5,
+      "bathrooms": 3,
+      "propertyType": "House",
+      "latitude": -33.8291,
+      "longitude": 151.2441
+    },
+    {
+      "id": "prop-007",
+      "address": "156 King Street",
+      "suburb": "Newtown",
+      "price": 980000,
+      "bedrooms": 2,
+      "bathrooms": 1,
+      "propertyType": "Apartment",
+      "latitude": -33.8976,
+      "longitude": 151.1792
+    },
+    {
+      "id": "prop-008",
+      "address": "22 Glebe Point Road",
+      "suburb": "Glebe",
+      "price": 1380000,
+      "bedrooms": 3,
+      "bathrooms": 2,
+      "propertyType": "Terrace",
+      "latitude": -33.8793,
+      "longitude": 151.1871
+    },
+    {
+      "id": "prop-009",
+      "address": "45 Darling Street",
+      "suburb": "Balmain",
+      "price": 2450000,
+      "bedrooms": 4,
+      "bathrooms": 3,
+      "propertyType": "House",
+      "latitude": -33.8572,
+      "longitude": 151.1795
+    },
+    {
+      "id": "prop-010",
+      "address": "118 Norton Street",
+      "suburb": "Leichhardt",
+      "price": 1150000,
+      "bedrooms": 2,
+      "bathrooms": 1,
+      "propertyType": "Apartment",
+      "latitude": -33.8833,
+      "longitude": 151.1569
+    },
+    {
+      "id": "prop-011",
+      "address": "67 Campbell Parade",
+      "suburb": "Bondi Beach",
+      "price": 2850000,
+      "bedrooms": 3,
+      "bathrooms": 2,
+      "propertyType": "Apartment",
+      "latitude": -33.8908,
+      "longitude": 151.2743
+    },
+    {
+      "id": "prop-012",
+      "address": "9 Arden Street",
+      "suburb": "Coogee",
+      "price": 1920000,
+      "bedrooms": 4,
+      "bathrooms": 2,
+      "propertyType": "House",
+      "latitude": -33.9212,
+      "longitude": 151.2559
+    },
+    {
+      "id": "prop-013",
+      "address": "234 Parramatta Road",
+      "suburb": "Stanmore",
+      "price": 875000,
+      "bedrooms": 2,
+      "bathrooms": 1,
+      "propertyType": "Apartment",
+      "latitude": -33.8936,
+      "longitude": 151.1647
+    },
+    {
+      "id": "prop-014",
+      "address": "51 Spit Road",
+      "suburb": "Mosman",
+      "price": 2750000,
+      "bedrooms": 4,
+      "bathrooms": 3,
+      "propertyType": "House",
+      "latitude": -33.8352,
+      "longitude": 151.2389
+    },
+    {
+      "id": "prop-015",
+      "address": "12 Blues Point Road",
+      "suburb": "McMahons Point",
+      "price": 1680000,
+      "bedrooms": 2,
+      "bathrooms": 1,
+      "propertyType": "Apartment",
+      "latitude": -33.8458,
+      "longitude": 151.2065
+    },
+    {
+      "id": "prop-016",
+      "address": "78 Anzac Parade",
+      "suburb": "Kensington",
+      "price": 1320000,
+      "bedrooms": 3,
+      "bathrooms": 2,
+      "propertyType": "Apartment",
+      "latitude": -33.9147,
+      "longitude": 151.2254
+    },
+    {
+      "id": "prop-017",
+      "address": "3 Elizabeth Bay Road",
+      "suburb": "Elizabeth Bay",
+      "price": 1890000,
+      "bedrooms": 3,
+      "bathrooms": 2,
+      "propertyType": "Apartment",
+      "latitude": -33.8728,
+      "longitude": 151.2281
+    },
+    {
+      "id": "prop-018",
+      "address": "145 Broadway",
+      "suburb": "Ultimo",
+      "price": 720000,
+      "bedrooms": 1,
+      "bathrooms": 1,
+      "propertyType": "Studio",
+      "latitude": -33.8833,
+      "longitude": 151.1997
+    },
+    {
+      "id": "prop-019",
+      "address": "28 Falcon Street",
+      "suburb": "Crows Nest",
+      "price": 1520000,
+      "bedrooms": 3,
+      "bathrooms": 2,
+      "propertyType": "Apartment",
+      "latitude": -33.8261,
+      "longitude": 151.2020
+    },
+    {
+      "id": "prop-020",
+      "address": "91 Macleay Street",
+      "suburb": "Potts Point",
+      "price": 1750000,
+      "bedrooms": 2,
+      "bathrooms": 2,
+      "propertyType": "Apartment",
+      "latitude": -33.8695,
+      "longitude": 151.2261
+    },
+    {
+      "id": "prop-021",
+      "address": "55 Willoughby Road",
+      "suburb": "Crows Nest",
+      "price": 1280000,
+      "bedrooms": 2,
+      "bathrooms": 1,
+      "propertyType": "Apartment",
+      "latitude": -33.8282,
+      "longitude": 151.1993
+    },
+    {
+      "id": "prop-022",
+      "address": "17 Ocean Street",
+      "suburb": "Woollahra",
+      "price": 3450000,
+      "bedrooms": 5,
+      "bathrooms": 3,
+      "propertyType": "House",
+      "latitude": -33.8862,
+      "longitude": 151.2397
+    },
+    {
+      "id": "prop-023",
+      "address": "63 Pyrmont Bridge Road",
+      "suburb": "Pyrmont",
+      "price": 1050000,
+      "bedrooms": 2,
+      "bathrooms": 1,
+      "propertyType": "Apartment",
+      "latitude": -33.8706,
+      "longitude": 151.1942
+    },
+    {
+      "id": "prop-024",
+      "address": "8 Curlewis Street",
+      "suburb": "Bondi Beach",
+      "price": 2250000,
+      "bedrooms": 3,
+      "bathrooms": 2,
+      "propertyType": "Apartment",
+      "latitude": -33.8921,
+      "longitude": 151.2712
+    },
+    {
+      "id": "prop-025",
+      "address": "102 Pitt Street",
+      "suburb": "Redfern",
+      "price": 890000,
+      "bedrooms": 2,
+      "bathrooms": 1,
+      "propertyType": "Apartment",
+      "latitude": -33.8932,
+      "longitude": 151.2046
+    }
+  ]
+}
